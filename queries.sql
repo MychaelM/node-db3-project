@@ -16,4 +16,10 @@ ORDER BY o."OrderDate" DESC;
 
 -- Display the name and quantity of the products ordered in order with Id 10251. Sort by ProductName. Shows 3 records.
 
+SELECT p.id, p."ProductName", o."Quantity" FROM Product AS p
+JOIN "OrderDetail" AS o
+ON p.id = o."ProductId"
+WHERE o."OrderId" = 10251
+ORDER BY p."ProductName";
+
 -- Display the OrderID, Customer's Company Name and the employee's LastName for every order. All columns should be labeled clearly. Displays 16,789 records.
