@@ -7,6 +7,7 @@ function find() {
 function findById(id) {
   return db("schemes")
     .where("id", id)
+    .first()
 }
 
 module.exports = {
