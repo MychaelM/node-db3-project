@@ -18,8 +18,16 @@ function findSteps(id){
     .orderBy("steps.step_number")
 }
 
+async function add(scheme) {
+  const newScheme = await db("schemes")
+    .insert(scheme)
+
+  return findById(newScheme[0])
+}
+
 module.exports = {
   find,
   findById,
   findSteps,
+  add,
 }
