@@ -33,10 +33,17 @@ async function update(changes, id){
   return findById(id)
 }
 
+function remove(id){
+  return db("schemes")
+    .where("id", id)
+    .del()
+}
+
 module.exports = {
   find,
   findById,
   findSteps,
   add,
   update,
+  remove
 }
